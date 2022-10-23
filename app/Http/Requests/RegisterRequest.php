@@ -28,11 +28,14 @@ class RegisterRequest extends FormRequest
             'email' => 'required|min:3',
             'password' => 'required|min:8',
             'password_confirmation' => 'required|same:password'*/
-            'name' => 'required||min:8',
+            'names' => 'required||min:8',
             'email' => 'required|email:rfc,dns|unique:users,email',
             'password' => 'required|min:8',
             'password_confirmation' => 'required|same:password',
-            'fecha' => 'required||min:10'
+            'fecha' => 'required||min:10',
+            'apellidos' => 'required||min:4',
+            'genero' => 'required||min:4',
+            'telefono' => 'required||min:9'
                 ];
     }
 }
