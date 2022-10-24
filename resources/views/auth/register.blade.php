@@ -2,7 +2,7 @@
 
 
     
-<title>Register</title>
+
 <link rel="icon" type="image/png" href="/imagenes/logo.png">
 
 <div class="img">

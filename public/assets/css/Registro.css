@@ -12,7 +12,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(/imagenes/Fondo2.0.jpg);
+  background-image: url(/imagenes/Fondo3.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -105,6 +105,7 @@ input::placeholder{
 }
 
 .formulario {
+  border-radius: 2rem;
   position: relative;
   top: -60px;
   left: 100px;
@@ -118,13 +119,7 @@ input::placeholder{
 .formulario h2{
   font-size: 30px;
 }
-.formulario2 {
-  width: 350px;
-  padding: 1rem;
-  margin: 2rem;
-  background-color: rgba(244, 144, 144, 0.212);
-  text-align: center;
-}
+
 .create-account {
   padding: 2.7rem 0;
   font-size: 1.7rem;
@@ -185,6 +180,7 @@ input::placeholder{
   cursor: pointer;
   color: #222;
 }
+
 .input1{
   position: relative;
   right: 120px;
@@ -463,23 +459,123 @@ input::placeholder{
   transition: 1s;
   transition-delay: 0.75s;
 }
+/*/////////////////BOTON DE INICIO DE SESIÓN*/
+
+.btnInicio{
+  background-color: #222;
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  letter-spacing: 4px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 18px;
+  overflow: hidden;
+  transition: 0.s;
+  margin-top: 45px;
+}
+.btnInicio:hover{
+  background: #dc3f17;
+    box-shadow: 0 0 10px #f5502c, 0 0 40px #f5502c, 0 0 80px #f5502c;
+    transition-delay: 1s;
+
+}
+.btnInicio span{
+  position: absolute;
+  display: block;
+}
+#span1{
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent,#dc3f17);
+}
+.btnInicio:hover #span1{
+  left: 100%;
+  transition: 1s;
+}
+#span3{
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent,#dc3f17);
+}
+.btnInicio:hover #span3{
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+#span2{
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg,transparent,#dc3f17);
+}
+.btnInicio:hover #span2{
+  top: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+#span4{
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg,transparent,#dc3f17);
+}
+.btnInicio:hover #span4{
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0.75s;
+}
 
 /*/////////FORMULARIO DE INICIO DE SESION*/
-
-.sign-in {
-  position: absolute;
-  opacity: 0;
-  visibility: hidden;
+.formulario2 {
+  border-radius: 2rem;
+  position: relative;
+  top: -60px;
+  left: 100px;
+  width: 400px;
+  height: 650px;
+  padding: 1rem;
+  margin: 2rem;
+  background-color: rgba(238, 176, 176, 0.379);
+  text-align: center;
+}
+.formulario2 h2{
+  font-size: 30px;
+}
+.formulario2 input {
+  width: 70%;
+  display: block;
+  margin: auto;
+  margin-bottom: 2rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: white thin solid;
+  text-align: center;
+  outline: none;
+  padding: .2rem 0;
+  font-size: .9rem;
+  color: white;
 }
 
-.sign-in.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.sign-up.active {
-  opacity: 0;
-  visibility: hidden;
+.formulario2 input[type="button"] {
+  width: 60%;
+  margin: auto;
+  border: solid thin white;
+  padding: .7rem;
+  border-radius: 2rem;
+  background-color: white;
+  font-weight: 600;
+  margin-top: 3rem;
+  font-size: .8rem;
+  cursor: pointer;
+  color: #222;
 }
 .capa{
   position: fixed;

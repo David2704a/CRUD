@@ -2,7 +2,7 @@
 @section('content')
 <title>Usuarios</title>
 <div class="container">
-    <div class="row" style="margin:20px">
+    <div class="row" style="width: 190vh" >
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
@@ -14,8 +14,8 @@
                     </a>
                     <br>
                     <br>
-                    <div class="table-responsive">
-                        <table class="table">
+                    <div class="table-responsive" style="">
+                        <table class="table" style="">
                             <thead>
                                 <tr>
                                     <th>#</th>

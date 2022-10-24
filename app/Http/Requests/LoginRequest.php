@@ -24,22 +24,22 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required',
+            'names'=>'required',
             'password'=>'required'
         ];
     }
     public function getCredentials(){
-        $name =$this->get('name');
+        $name =$this->get('names');
         if($this->isEmail($name)){
             return[
                 'email'=> $name,
                 'password'=> $this->get('password')
             ];
         }
-        return $this->only('name', 'password');
+        return $this->only('names', 'password');
     }
     public function isEmail($value){
         $factory = $this->container->make(ValidationFactory::class);
-        return !$factory->make(['name' => $value], ['name'=>'email'])->fails();
+        return !$factory->make(['names' => $value], ['names'=>'email'])->fails();
     }
 }
