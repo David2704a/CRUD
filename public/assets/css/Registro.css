@@ -1,587 +1,516 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+:root{
+  --color-negro:#151718;
+  --color-texto:#727C77;
+  --color-rojo:#ED0722;
+  --color-rgba-rojo:rgba(237,7,34,.21);
+  --color-rgba-celeste:rgba(55,147,246,.27);
+  --color-rojo2:#B62602;
+  --color-input:#EEF5F9;
+}
 
-
+.input-error{
+  border: 1px solid var(--color-rojo) !important;
+}
+/*========================================
+Estilos generales
+==========================================*/
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Copperplate / Copperplate Gothic Light, sans-serif;
 }
+
 body{
- 
+  background: #f7f9fd;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}
+
+.contenedor-login{
+  width: 100%;
   height: 100vh;
   display: flex;
-  align-items: center;
+  -webkit-box-align: start;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+/*========================================
+Estilos del contenedor slider
+==========================================*/
+.contenedor-slider{
+  width: calc(100% - 520px);
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider{
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.slide{
+  min-width: 100%;
+  min-height: 100%;
+  height: auto;
+  display: none;
+  position: relative;
   justify-content: center;
-  background-image: url(/imagenes/Fondo3.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: #fff;
 }
-.cel{
-top: 168px;
-right: 780px;
-position: absolute;
-animation: floating 1s infinite alternate ease;
+
+.slide.active{
+  display: flex;
 }
-.cel img{
-  width: 550;
-  animation: floating 0.1s infinite alternate ease-in-out;
+
+.slide img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-@keyframes floating {
-  from {
-    top: 159px;
-  }to{
-    top: 178px;
+/*========================================
+Estilos del eslogan
+==========================================*/
+   h5{
+  font-size: 18px;
+  font-family: 'Dancing Script', cursive;
+  position: relative;
+  top: -25px;
+  margin: 50px;
+  height: 23px;
+  font-size: 19px;
+  background-color: rgba(238, 176, 176, 0.379);
+  text-align: center;
+  border-radius: 20px;
+  }
+/*========================================
+Estilos del contenido-slider
+==========================================*/
+.contenido-slider{
+  position: absolute;
+  top: 60px;
+  width: 600px;
+  text-align: center;
+}
+
+.contenido-slider .logo{
+  position: relative;
+  top: -60px;
+  margin-bottom: 20px;
+}
+
+.contenido-slider .logo img{
+  width: 200px;
+}
+
+.contenido-slider .slider-texto{
+  color: #B62602;
+  font-size: 16px;
+}
+
+/*========================================
+animacion de las fotos Slide
+==========================================*/
+.fade{
+  animation: fade 1.5s ease-in-out;
+  -webkit-animation: fade 1.5s ease-in-out;
+}
+
+@-webkit-keyframes fade{
+  from{
+      opacity: 0.4;
+  }
+
+  to{
+      opacity: 1;
   }
 }
-.img{
-  position: relative;
-  top: 348px;
-  right: 15px;
+
+@keyframes fade{
+  from{
+      opacity: 0.4;
+  }
+
+  to{
+      opacity: 1;
+  }
 }
-.img2{
-  position: relative;
-  top: -338px;
-  right: 64px;
-}
-.title{
-  background-image: url(/imagenes/logo.png);
-}
-.container-form{
-  width: 90%;
-  height: 90vh;
-  display: flex;
-  justify-content: space-around;
-  transition: all .5s ease-out;
-}
-.welcome-back{
-  position: relative;
-  top: -290px;
-  color: rgb(255, 255, 255);
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-p{
-  color: white;
-  font-size: 25px;
-}
-.message{
-  padding: 1rem;
-}
-.message h2{
-  font-size: 2.4rem;
-  padding: 1rem 0;
-}
-.message h3{
-  color: rgb(159, 157, 157);
-  font-size: 1.3rem;
-  padding: 1rem 0;
-}
-/*.message .boton a {
-  position: relative;
-  top: 50px;
-  padding: 1rem;
-  font-weight: 400;
-  background-color: #ee4d4a;
-  border-radius: 2rem;
-  border: none;
-  outline: none;
+
+/*========================================
+Botones ante y siguiente
+==========================================*/
+.ante,
+.siguiente{
   cursor: pointer;
-  font-size: .9rem;
-  margin-top: 2rem;
-  transition: all .3s ease-in;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 8px;
+  background: var(--color-rojo2);
+  margin-top: -22px;
   color: #fff;
-  text-decoration: none;
-}
-.message .boton :hover {
-  background-color: #ffaf53;
-
-}*/
-input::placeholder{
-  font-size: 15px;
-  color: rgb(54, 22, 15);
+  font-weight: bold;
+  font-size: 28px;
+  transition:all .6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  outline: 0;
 }
 
-.formulario {
-  border-radius: 2rem;
-  position: relative;
-  top: -60px;
-  left: 100px;
-  width: 500px;
-  height: 650px;
-  padding: 1rem;
-  margin: 2rem;
-  background-color: rgba(238, 176, 176, 0.379);
+.siguiente{
+  right: 0;
+  border-radius: 3px 0px 0px 3px;
+}
+
+.ante:hover,
+.siguiente:hover{
+  background: var(--color-negro);
+}
+
+/* puntos */
+.dots{
+  position: absolute;
+  width: 100%;
   text-align: center;
-}
-.formulario h2{
-  font-size: 30px;
+  bottom: 10px;
 }
 
-.create-account {
-  padding: 2.7rem 0;
-  font-size: 1.7rem;
+.dots .dot{
+  outline: 0;
+  cursor: pointer;
+  height: 8px;
+  width: 8px;
+  margin: 0 2px;
+  border: 1px solid var(--color-rojo2);
+  border-radius: 4px;
+  display: inline-block;
+  transition: all .6s ease-in-out;
 }
 
-.iconos {
-  width: 200px;
+.dots .dot.active{
+  background: var(--color-rojo2);
+  width: 30px;
+}
+
+/*========================================
+Estilos contenedor formularios
+==========================================*/
+.contenedor-texto{
+  width: 520px;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  background: #fff;
+}
+
+.contenedor-form{
+  position: relative;
+  top: -50px;
+  width: 100%;
+  padding: 100px 50px 50px 50px;
+}
+
+.contenedor-form .titulo{
+  position: relative;
+  top: 32px;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--color-negro);
+}
+
+.contenedor-form .descripcion{
+  position: relative;
+  top: 24px;
+  font-size: 15px;
+  color: var(--color-texto);
+}
+
+/*========================================
+Estilos Tabs
+==========================================*/
+.tabs-links{
+  margin-top: 70px;
   display: flex;
-  justify-content: space-around;
-  margin: auto;
+  width: 100%;
+  border-bottom: 1px solid #f2f2f2;
+  padding-bottom: 10px;
 }
-.border-icon {
+
+.tabs-links .tab-link{
+  font-size: 15px;
+  margin-right: 30px;
+  color: var(--color-texto);
+  cursor: pointer;
+  position: relative;
+}
+
+.tabs-links .tab-link.active{
+  color: var(--color-rojo2);
+  font-weight: 700;
+}
+
+.tabs-links .tab-link.active::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--color-rojo2);
+  left: 0;
+  bottom: -10px;
+}
+
+/*========================================
+Estilos Formularios
+==========================================*/
+.formulario{
+  display: none;
+  margin-top: 30px;
+}
+
+.formulario.active{
+  display: block;
+}
+
+.formulario .input-text{
+  padding: 14px 20px;
+  border: 1px solid transparent;
+  background: var(--color-input);
+  margin-bottom: 20px;
+  border-radius: 3px;
+  width: 100%;
+  outline: 0;
+  font-size: 14px;
+  color: var(--color-texto);
+}
+
+.formulario .grupo-input{
+  display: flex;
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.formulario .grupo-input .input-text{
+  padding-right: 60px;
+  margin-bottom: 0px;
+}
+
+.formulario .grupo-input .icono{
+  position: absolute;
+  width: 60px;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+  background: none;
+  font-size: 18px;
+  color: var(--color-texto);
+  right: 0;
+  outline: 0;
+}
+
+.formulario .grupo-input .icono.active{
+  color: var(--color-rojo2);
+}
+
+.formulario .input-text:focus{
+  border: 1px solid #B62602;
+}
+
+.link{
+  font-size: 14px;
+  color: var(--color-rojo2);
+}
+
+.link:hover{
+  text-decoration: underline;
+}
+
+.formulario .btn{
+  width: 100%;
+  padding: 14px;
+  border: none;
+  background: var(--color-rojo2);
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  margin-top: 30px;
+  outline: 0;
+  cursor: pointer;
+  display: block;
+}
+.formulario .btn:hover{
+  background: #cd540e;
+}
+
+/*========================================
+Estilos de los checkbox
+==========================================*/
+.contenedor-cbx{
+  display: inline-block;
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--color-texto);
+  user-select: none;
+}
+
+
+
+.contenedor-cbx input{
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.contenedor-cbx .cbx-marca{
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 20px;
   width: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  border: solid thin white;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  transition: all .3s ease-in;
+  background: transparent;
+  border:1px solid var(--color-texto);
+  border-radius: 2px;
+  transition: all .8s ease;
 }
 
-.border-icon:hover {
-  background-color: #f7422a;
-  cursor: pointer;
-}
-.cuenta-gratis {
-  padding: 2rem 0;
-}
-/*//////////FORMULARIO DE REGISTRO*/
-.formulario input {
-
-  width: 35%;
-  display: block;
-  margin: auto;
-  margin-bottom: 2rem;
-  background-color: transparent;
-  border: none;
-  border-bottom: rgb(255, 255, 255) thin solid;
-  text-align: center;
-  outline: none;
-  padding: .2rem 0;
-  font-size: .9rem;
-  color: white;
-}
-.formulario input[type="button"] {
-  width: 60%;
-  margin: auto;
-  border: solid thin white;
-  padding: .7rem;
-  border-radius: 2rem;
-  background-color: white;
-  font-weight: 600;
-  margin-top: 3rem;
-  font-size: .8rem;
-  cursor: pointer;
-  color: #222;
+.contenedor-cbx:hover input ~ .cbx-marca{
+  border: 1px solid var(--color-rojo2);
 }
 
-.input1{
-  position: relative;
-  right: 120px;
-  width: 40%;
-  display: block;
-  margin: auto;
-  margin-bottom: 2rem;
-  background-color: transparent;
-  border: none;
-  border-bottom: white thin solid;
-  text-align: center;
-  outline: none;
-  padding: .2rem 0;
-  font-size: .9rem;
-  color: white;
-}
-.input2{
-  position: relative;
-  top: -57px;
-  left: 120px;
-  width: 40%;
-  display: block;
-  margin: auto;
-  margin-bottom: 2rem;
-  background-color: transparent;
-  border: none;
-  border-bottom: white thin solid;
-  text-align: center;
-  outline: none;
-  padding: .2rem 0;
-  font-size: .9rem;
-  color: white;
-}.input3{
-  position: relative;
-  top: -57px;
-  right: 120px;
-  width: 40%;
-  display: block;
-  margin: auto;
-  margin-bottom: 2rem;
-  background-color: transparent;
-  border: none;
-  border-bottom: white thin solid;
-  text-align: center;
-  outline: none;
-  padding: .2rem 0;
-  font-size: .9rem;
-  color: white;
-}
-.input4{
-  position: relative;
-  top: -113px;
-  left: 120px;
-  width: 40%;
-  display: block;
-  margin: auto;
-  margin-bottom: 2rem;
-  background-color: transparent;
-  border: none;
-  border-bottom: white thin solid;
-  text-align: center;
-  outline: none;
-  padding: .2rem 0;
-  font-size: .9rem;
-  color: white;
-}
-.input5{
-  position: relative;
-  top: -113px;
-  right: 120px;
-  width: 40%;
-  display: block;
-  margin: auto;
-  margin-bottom: 2rem;
-  background-color: transparent;
-  border: none;
-  border-bottom: white thin solid;
-  text-align: center;
-  outline: none;
-  padding: .2rem 0;
-  font-size: .9rem;
-  color: white;
-}.input6{
-  position: relative;
-  top: -169px;
-  left: 120px;
-  width: 40%;
-  display: block;
-  margin: auto;
-  margin-bottom: 2rem;
-  background-color: transparent;
-  border: none;
-  border-bottom: white thin solid;
-  text-align: center;
-  outline: none;
-  padding: .2rem 0;
-  font-size: .9rem;
-  color: white;
-}.input7{
-  position: relative;
-  top: -167px;
-  right: 120px;
-  width: 40%;
-  display: block;
-  margin: auto;
-  margin-bottom: 2rem;
-  background-color: transparent;
-  border: none;
-  border-bottom: white thin solid;
-  text-align: center;
-  outline: none;
-  padding: .2rem 0;
-  font-size: .9rem;
-  color: white;
-}.input8{
-  position: relative;
-  top: -223px;
-  left: 120px;
-  width: 40%;
-  display: block;
-  margin: auto;
-  margin-bottom: 2rem;
-  background-color: transparent;
-  border: none;
-  border-bottom: white thin solid;
-  text-align: center;
-  outline: none;
-  padding: .2rem 0;
-  font-size: .9rem;
-  color: white;
-}
-
-/*/////////BOTON DE REGISTRAR*/
-.btnRegistro{
-  background-color: #222;
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  border: none;
-  letter-spacing: 4px;
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  font-size: 18px;
-  overflow: hidden;
-  transition: 0.s;
-  margin-top: -210px;
-}
-.btnRegistro:hover{
-  background: #dc3f17;
-    box-shadow: 0 0 10px #f5502c, 0 0 40px #f5502c, 0 0 80px #f5502c;
-    transition-delay: 1s;
-
-}
-.btnRegistro span{
+.contenedor-cbx .cbx-marca::after{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f00c';
+  font-size: 13px;
   position: absolute;
+  display: none;
+  left: 3px;
+  top: 3px;
+  color: #fff;
+}
+
+.contenedor-cbx input:checked ~ .cbx-marca::after{
   display: block;
 }
-#span1{
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent,#dc3f17);
-}
-.btnRegistro:hover #span1{
-  left: 100%;
-  transition: 1s;
-}
-#span3{
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg, transparent,#dc3f17);
-}
-.btnRegistro:hover #span3{
-  right: 100%;
-  transition: 1s;
-  transition-delay: 0.5s;
-}
-#span2{
-  top: -100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg,transparent,#dc3f17);
-}
-.btnRegistro:hover #span2{
-  top: 100%;
-  transition: 1s;
-  transition-delay: 0.25s;
-}
-#span4{
-  bottom: -100%;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(360deg,transparent,#dc3f17);
-}
-.btnRegistro:hover #span4{
-  bottom: 100%;
-  transition: 1s;
-  transition-delay: 0.75s;
-}
-/*/////////BOTON DE PASAR A INICIAR SESIÓN*/
-.btnLogin{
-  position: relative;
-  top: 10px;
-  background-color: #222;
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  border: none;
-  letter-spacing: 4px;
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  font-size: 18px;
-  overflow: hidden;
-  transition: 0.s;
 
-}
-.btnLogin:hover{
-  background: #dc3f17;
-    box-shadow: 0 0 10px #f5502c, 0 0 40px #f5502c, 0 0 80px #f5502c;
-    transition-delay: 1s;
 
-}
-.btnLogin span{
-  position: absolute;
-  display: block;
-}
-#span1{
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent,#dc3f17);
-}
-.btnLogin:hover #span1{
-  left: 100%;
-  transition: 1s;
-}
-#span3{
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg, transparent,#dc3f17);
-}
-.btnLogin:hover #span3{
-  right: 100%;
-  transition: 1s;
-  transition-delay: 0.5s;
-}
-#span2{
-  top: -100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg,transparent,#dc3f17);
-}
-.btnLogin:hover #span2{
-  top: 100%;
-  transition: 1s;
-  transition-delay: 0.25s;
-}
-#span4{
-  bottom: -100%;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(360deg,transparent,#dc3f17);
-}
-.btnLogin:hover #span4{
-  bottom: 100%;
-  transition: 1s;
-  transition-delay: 0.75s;
-}
-/*/////////////////BOTON DE INICIO DE SESIÓN*/
-
-.btnInicio{
-  background-color: #222;
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  border: none;
-  letter-spacing: 4px;
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  font-size: 18px;
-  overflow: hidden;
-  transition: 0.s;
-  margin-top: 45px;
-}
-.btnInicio:hover{
-  background: #dc3f17;
-    box-shadow: 0 0 10px #f5502c, 0 0 40px #f5502c, 0 0 80px #f5502c;
-    transition-delay: 1s;
-
-}
-.btnInicio span{
-  position: absolute;
-  display: block;
-}
-#span1{
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent,#dc3f17);
-}
-.btnInicio:hover #span1{
-  left: 100%;
-  transition: 1s;
-}
-#span3{
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg, transparent,#dc3f17);
-}
-.btnInicio:hover #span3{
-  right: 100%;
-  transition: 1s;
-  transition-delay: 0.5s;
-}
-#span2{
-  top: -100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg,transparent,#dc3f17);
-}
-.btnInicio:hover #span2{
-  top: 100%;
-  transition: 1s;
-  transition-delay: 0.25s;
-}
-#span4{
-  bottom: -100%;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(360deg,transparent,#dc3f17);
-}
-.btnInicio:hover #span4{
-  bottom: 100%;
-  transition: 1s;
-  transition-delay: 0.75s;
+.contenedor-cbx input:checked ~ .cbx-marca{
+  background: var(--color-rojo2) !important;
+  border: 1px solid var(--color-rojo2) !important;
 }
 
-/*/////////FORMULARIO DE INICIO DE SESION*/
-.formulario2 {
-  border-radius: 2rem;
-  position: relative;
-  top: -60px;
-  left: 100px;
-  width: 400px;
-  height: 650px;
-  padding: 1rem;
-  margin: 2rem;
-  background-color: rgba(238, 176, 176, 0.379);
-  text-align: center;
-}
-.formulario2 h2{
-  font-size: 30px;
-}
-.formulario2 input {
-  width: 70%;
-  display: block;
-  margin: auto;
-  margin-bottom: 2rem;
-  background-color: transparent;
-  border: none;
-  border-bottom: white thin solid;
-  text-align: center;
-  outline: none;
-  padding: .2rem 0;
-  font-size: .9rem;
-  color: white;
+/*========================================
+Animación a los checkbox
+==========================================*/
+
+.contenedor-cbx.animate input:checked ~ .cbx-marca{
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
-.formulario2 input[type="button"] {
-  width: 60%;
-  margin: auto;
-  border: solid thin white;
-  padding: .7rem;
-  border-radius: 2rem;
-  background-color: white;
-  font-weight: 600;
-  margin-top: 3rem;
-  font-size: .8rem;
-  cursor: pointer;
-  color: #222;
+/*//////////////////////Responsive///////////*/
+
+
+/*///////////////////////////////@media query - pantalla de celular///////////////////*/
+
+@media screen and (max-width: 768px) {
+
+  .contenedor-login {
+      flex-direction: column;
+      height: 100%;
+  }
+
+  .contenedor-slider {
+      width: 100%;
+      height: 400px;
+      position: relative;
+  }
+
+  .contenido-slider {
+      top: 30px;
+      width: 100%;
+  }
+
+  
+
+  .dots {
+      display: none;
+  }
+
+  
+
+  .contenedor-texto{
+      width:calc(100% - 30px);
+      position: relative;
+      background: #fff;
+      box-shadow: 0px 3px 6px rgba(0,0,0,.08);
+      margin: auto;
+      margin-top: -50px;
+      border-radius: 7px;
+      margin-bottom: 40px;
+  }
+
+  .contenedor-form {
+      padding: 20px !important;
+  }
+
+  .contenedor-form .titulo {
+      font-size: 20px;
+  }
+
+  .contenedor-form .tabs-links {
+      margin-top: 40px;
+  }
+
+  
 }
-.capa{
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0,0,0,0.6);
-  z-index: -1;
-  top: 0;left: 0;
+
+
+
+/*========================================
+  @media query - Tableta horizontal
+==========================================*/
+@media screen and (max-width: 812px) {
+  .contenido-slider .slider-texto {
+      display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  
+
+  .contenedor-form {
+      padding: 50px;
+  }
+
+  .prev,.next{
+      display: none;
+  }
+
+  .contenido-slider {
+      width: 100%;
+      top: 30px;
+  }
+
+  .contenido-slider .slider-texto {
+     padding: 0px 30px;
+  }
 }

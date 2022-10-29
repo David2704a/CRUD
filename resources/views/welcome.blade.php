@@ -4,12 +4,12 @@
 <h1>HOME</h1>
 
 @auth
-<p>Bienvenid@ {{auth()->user()->name}} estas logueado en nuestra app</p>
+<p>Bienvenid@ {{auth()->user()->names}} estas logueado en nuestra app</p>
 
 
 @endauth
 @guest
-    <p>Para ver el contenido <a href="/login"> Inica sesión</a></p>
+    <p>Para ver el contenido</p><a href="/login"> Inicia sesión</a>
 @endguest
 
 @endsection
