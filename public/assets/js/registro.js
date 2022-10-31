@@ -11,22 +11,22 @@ if(document.querySelector('.contenedor-slider')){
     const slidesTotal=slides.childElementCount;
 
     const dots=document.querySelector('.dots');
-    const prev=document.querySelector('.ante');
-    const next=document.querySelector('.siguiente');
+    const ante=document.querySelector('.ante');
+    const siguiente=document.querySelector('.siguiente');
 
 
-    //agregamos los punto de acuerdo a la cantidad de slides
+    //se agrega los punto de acuerdo a la cantidad de slides
     for (let i = 0; i < slidesTotal; i++) {
         dots.innerHTML +='<span class="dot"></span>';
     }
     
-    //ejecutamos la funcion
+    // aqui se ejecuta la funcion
     mostrarSlider(index);
 
-    //hacemos que nuestro slide sea automatico
+    //hago que el slide sea automatico
     setInterval(()=>{
         mostrarSlider(index=selectedIndex);
-    },5000); //rempresentados en milesegundos
+    },5000); //están representados en milisegundos
 
     //funcion para mostrar el slider
     function mostrarSlider(num){
@@ -44,7 +44,7 @@ if(document.querySelector('.contenedor-slider')){
             index=slidesTotal;
         }
 
-        //removemos la clase active de todos los slide
+        //se remueve la clase active de todos los slide
         for(let i=0; i<slidesTotal;i++){
             slide[i].classList.remove('active');
         }
@@ -65,12 +65,12 @@ if(document.querySelector('.contenedor-slider')){
     }
 
     //evento para los botones ante y siguiente
-    next.addEventListener('click',(e)=>{
+    siguiente.addEventListener('click',(e)=>{
         mostrarSlider(index +=1);
         selectedIndex=index;
     });
 
-    prev.addEventListener('click',(e)=>{
+    ante.addEventListener('click',(e)=>{
         mostrarSlider(index +=-1);
         selectedIndex=index;
     });

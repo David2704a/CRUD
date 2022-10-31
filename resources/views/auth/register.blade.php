@@ -1,4 +1,5 @@
 @extends('layouts.register')
+<link rel="icon" type="image/png" href="/imagenes/logo2.png">
 
 <div class="contenedor-login">
 
@@ -71,9 +72,6 @@
                 <li class="tab-link active">Regístrate</li>
             </ul>
 
-            <!--========================================
-                Formulario logue
-            ==========================================-->
              <!--========================================
                 Formulario de Registro
             ==========================================-->
@@ -117,7 +115,8 @@
                  <label class="contenedor-cbx animate">
                     He leído y acepto los
                     <a href="#" class="link">Términos y Condiciones</a>
-                    <a href="#" class="link">y Política de privacidad de mi Tienda</a>
+                    ademas de
+                    <a href="#" class="link"> Política de privacidad de la app</a>
                     
                     <input type="checkbox" name="cbx_terminos" >
                     <span class="cbx-marca"></span>
