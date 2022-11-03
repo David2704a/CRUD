@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+ 
+// Route::get('/login-google', function () {
+//     return Socialite::driver('google')->redirect();
+// });
+ 
+// Route::get('/auth/callback', function () {
+//     $user = Socialite::driver('google')->user();
+//     dd($user);
+//     // $user->token
+// });
 
 Route::get('/', [HomeController::class, 'index']); 
 

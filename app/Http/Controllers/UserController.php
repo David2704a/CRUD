@@ -39,7 +39,7 @@ class UserController extends Controller
     {
         $input = $request->all();
         User::create($input);
-        return redirect('usuarios')->with('flash_message','Usuario Añadido');
+        return redirect('/login')->with('flash_message','Usuario Añadido');
     }
 
     /**
@@ -90,6 +90,6 @@ class UserController extends Controller
     public function destroy($id)
     {
         User::destroy($id);
-        return redirect('usuarios')->with('flash_message','Usuario Actualizado');
+        return redirect('usuarios')->with('flash_message','Usuario Elminado');
     }
 }

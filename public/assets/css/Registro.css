@@ -35,7 +35,7 @@ ul{
   list-style: none;
 }
 
-.contenedor-login{
+.contenedor-register{
   width: 100%;
   height: 100vh;
   display: flex;
@@ -47,21 +47,21 @@ ul{
 /*========================================
 Estilos del contenedor slider
 ==========================================*/
-.contenedor-slider{
+.contenedor-Slider{
   width: calc(100% - 520px);
   height: 100%;
   overflow: hidden;
   position: relative;
 }
 
-.slider{
+.Slider{
   position: relative;
   display: flex;
   width: 100%;
   height: 100%;
 }
 
-.slide{
+.Slide{
   min-width: 100%;
   min-height: 100%;
   height: auto;
@@ -70,11 +70,11 @@ Estilos del contenedor slider
   justify-content: center;
 }
 
-.slide.active{
+.Slide.Active{
   display: flex;
 }
 
-.slide img{
+.Slide img{
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -97,24 +97,24 @@ Estilos del eslogan
 /*========================================
 Estilos del contenido-slider
 ==========================================*/
-.contenido-slider{
+.contenido-Slider{
   position: absolute;
   top: 60px;
   width: 600px;
   text-align: center;
 }
 
-.contenido-slider .logo{
+.contenido-Slider .logo{
   position: relative;
   top: -60px;
   margin-bottom: 20px;
 }
 
-.contenido-slider .logo img{
+.contenido-Slider .logo img{
   width: 200px;
 }
 
-.contenido-slider .slider-texto{
+.contenido-Slider .Slider-texto{
   color: #B62602;
   font-size: 16px;
 }
@@ -123,7 +123,8 @@ Estilos del contenido-slider
 animacion de las fotos Slide
 ==========================================*/
 .fade{
-  animation: fade 1.5s ease-in-out;
+  animation: fade 1.5ms ease-in-out;
+ 
   -webkit-animation: fade 1.5s ease-in-out;
 }
 
@@ -179,14 +180,14 @@ Botones ante y siguiente
 }
 
 /* puntos */
-.dots{
+.Dots{
   position: absolute;
   width: 100%;
   text-align: center;
   bottom: 10px;
 }
 
-.dots .dot{
+.Dots .Dot{
   outline: 0;
   cursor: pointer;
   height: 8px;
@@ -198,7 +199,7 @@ Botones ante y siguiente
   transition: all .6s ease-in-out;
 }
 
-.dots .dot.active{
+.Dots .Dot.active{
   background: var(--color-rojo2);
   width: 30px;
 }
@@ -433,18 +434,18 @@ Animación a los checkbox
 
 @media screen and (max-width: 768px) {
 
-  .contenedor-login {
+  .contenedor-register {
       flex-direction: column;
       height: 100%;
   }
 
-  .contenedor-slider {
+  .contenedor-Slider {
       width: 100%;
       height: 400px;
       position: relative;
   }
 
-  .contenido-slider {
+  .contenido-Slider {
       top: 30px;
       width: 100%;
   }
@@ -505,12 +506,12 @@ Animación a los checkbox
       display: none;
   }
 
-  .contenido-slider {
+  .contenido-Slider {
       width: 100%;
       top: 30px;
   }
 
-  .contenido-slider .slider-texto {
+  .contenido-Slider .Slider-texto {
      padding: 0px 30px;
   }
 }

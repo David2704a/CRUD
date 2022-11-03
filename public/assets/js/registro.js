@@ -1,87 +1,87 @@
 /*========================================
 Slider
 ==========================================*/
-if(document.querySelector('.contenedor-slider')){
+if(document.querySelector('.contenedor-Slider')){
 
-    let index=1;
-    let selectedIndex=1;
+    let Index=1;
+    let SelectedIndex=1;
 
-    const slides=document.querySelector('.slider');
-    const slide=slides.children;
-    const slidesTotal=slides.childElementCount;
+    const Slides=document.querySelector('.Slider');
+    const Slide=Slides.children;
+    const SlidesTotal=Slides.childElementCount;
 
-    const dots=document.querySelector('.dots');
+    const Dots=document.querySelector('.Dots');
     const ante=document.querySelector('.ante');
     const siguiente=document.querySelector('.siguiente');
 
 
     //se agrega los punto de acuerdo a la cantidad de slides
-    for (let i = 0; i < slidesTotal; i++) {
-        dots.innerHTML +='<span class="dot"></span>';
+    for (let i = 0; i < SlidesTotal; i++) {
+        Dots.innerHTML +='<span class="Dot"></span>';
     }
     
     // aqui se ejecuta la funcion
-    mostrarSlider(index);
+    mostrarSlider(Index);
 
     //hago que el slide sea automatico
     setInterval(()=>{
-        mostrarSlider(index=selectedIndex);
+        mostrarSlider(Index=SelectedIndex);
     },5000); //están representados en milisegundos
 
     //funcion para mostrar el slider
     function mostrarSlider(num){
-        if(selectedIndex > slidesTotal){
-            selectedIndex=1;
+        if(SelectedIndex > SlidesTotal){
+            SelectedIndex=1;
         }else{
-            selectedIndex++;
+            SelectedIndex++;
         }
 
-        if(num > slidesTotal){
-            index=1;
+        if(num > SlidesTotal){
+            Index=1;
         }
 
         if(num<1){
-            index=slidesTotal;
+            Index=SlidesTotal;
         }
 
         //se remueve la clase active de todos los slide
-        for(let i=0; i<slidesTotal;i++){
-            slide[i].classList.remove('active');
+        for(let i=0; i<SlidesTotal;i++){
+            Slide[i].classList.remove('Active');
         }
 
         //aqui remuevo la clase active de los puntos
 
-        for (let x = 0; x < dots.children.length; x++) {
-            dots.children[x].classList.remove('active');
+        for (let x = 0; x < Dots.children.length; x++) {
+            Dots.children[x].classList.remove('Active');
         }
 
         //muestro el slide
-        slide[index-1].classList.add('active');
+        Slide[Index-1].classList.add('Active');
 
         //agrego la clase active al punto donde se encuntra el slide
-        dots.children[index-1].classList.add('active');
+        Dots.children[Index-1].classList.add('Active');
 
         
     }
 
     //evento para los botones ante y siguiente
     siguiente.addEventListener('click',(e)=>{
-        mostrarSlider(index +=1);
-        selectedIndex=index;
+        mostrarSlider(Index +=1);
+        SelectedIndex=Index;
     });
 
     ante.addEventListener('click',(e)=>{
-        mostrarSlider(index +=-1);
-        selectedIndex=index;
+        mostrarSlider(Index +=-1);
+        SelectedIndex=Index;
     });
 
     //puntos
-    for (let y = 0; y < dots.children.length; y++) {
+    for (let y = 0; y < Dots.children.length; y++) {
         
         //por cada dot que ecuentre le agregamos el evento click y ejecutamo la funcion de slide
-        dots.children[y].addEventListener('click',()=>{
-            mostrarSlider(index=y+1);
-            selectedIndex=y+1;
+        Dots.children[y].addEventListener('click',()=>{
+            mostrarSlider(Index=y+1);
+            SelectedIndex=y+1;
         });
     }
 

@@ -1,20 +1,20 @@
 @extends('layouts.register')
 <link rel="icon" type="image/png" href="/imagenes/logo2.png">
 
-<div class="contenedor-login">
+<div class="contenedor-register">
 
     <!--========================================
         Slider
     ==========================================-->
-    <div class="contenedor-slider">
+    <div class="contenedor-Slider">
 
-        <div class="slider">
+        <div class="Slider">
 
             <!-- foto 1 -->
-            <div class="slide fade ">
+            <div class="Slide fade">
                 <img src="/imagenes/cocina.png" alt="">
 
-                <div class="contenido-slider">
+                <div class="contenido-Slider">
 
                     <div class="logo">
                         <img src="/imagenes/logo2.png" alt="">
@@ -25,10 +25,10 @@
             </div>
 
             <!-- foto 2 -->
-            <div class="slide fade">
-                <img src="/imagenes/libro.png" width="500" alt="">
+            <div class="Slide fade">
+                <img src="/imagenes/libro.png" alt="">
 
-                <div class="contenido-slider">
+                <div class="contenido-Slider">
 
                     <div class="logo">
                         <img src="/imagenes/logo2.png" alt="">
@@ -47,10 +47,9 @@
         <a href="#" class="siguiente"><i class='bx bx-chevron-right'></i></i></a>
 
         <!-- dots -->
-        <div class="dots">
+        <div class="Dots">
 
-            <!-- <span class="dot active"></span> -->
-
+             {{-- <span class="Dot Active"></span>  --}}
         </div>
 
     </div>
@@ -65,7 +64,7 @@
             <h1 class="titulo">¡Bienvenido a Recip-NL!</h1>
             <div class="eslogan">
                 <h5 class="descripcion">Reparte Recetas Reparte Amor.</h5>
-
+                <a href="https://accounts.google.com/AccountChooser/signinchooser?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&flowName=GlifWebSignIn&flowEntry=AccountChooser">G</a>
             </div>
             <!-- Tabs -->
             <ul class="tabs-links">
@@ -87,7 +86,7 @@
                     <option value="Femenino">Femenino</option>
                     <option value="Otro">Otro</option>
                 </select>
-                <input type="text" placeholder="Teléfono" class="input-text" name="telefono">
+                <input type="text" placeholder="Teléfono" class="input-text" name="telefono" pattern="[-0-9]">
                 <input type="date" placeholder="Fecha de nacimiento" class="input-text" name="fecha">
 
                 <div class="grupo-input">

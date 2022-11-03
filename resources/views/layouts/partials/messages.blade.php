@@ -1,3 +1,5 @@
+{{-- <link rel="stylesheet" href="{{url ('assets/css/bootstrap.min.css')}}"> --}}
+<link rel="stylesheet" href="{{url ('assets/css/Registro.css')}}">
 @if (isset($errors) && count($errors) >0)
      <div class="alert alert-danger">
         <ul class="list-unstyled mb-0">

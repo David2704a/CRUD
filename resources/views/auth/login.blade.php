@@ -2,7 +2,7 @@
 
     <link rel="icon" type="image/png" href="/imagenes/logo2.png">
     
-    <main class="login-desing">
+    <main class="login-diseño">
         
         <div class="olas">
             <div class="img">

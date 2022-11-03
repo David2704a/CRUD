@@ -6,7 +6,7 @@ body{
     font-family: 'Montserrat Alternates', sans-serif;
 
 }
-.login-desing{
+.login-diseño{
     display: grid;
     grid-template-columns: repeat(2, 50%);
     height: 100vh;
@@ -163,7 +163,7 @@ Mensaje para ir a registrar
     padding: 1rem 0;
   }
  /*========================================
-Boton para pasar iniciar sesion, le quite el boton V:
+Boton para pasar a registro
 ==========================================*/
   .btnLogin{
     position: relative;
