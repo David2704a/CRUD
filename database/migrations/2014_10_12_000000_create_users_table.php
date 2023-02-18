@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('apellidos');
             $table->string('fecha');
             $table->string('genero');
-            $table->string('telefono');            
+            $table->string('telefono');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
@@ -37,3 +37,6 @@ return new class extends Migration
         Schema::dropIfExists('users');
     }
 };
+
+
+

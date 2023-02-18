@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
@@ -42,5 +44,20 @@ Route::post('/register', [RegisterController::class, 'register']);
 //Inicio de session
 Route::get('/login', [LoginController::class, 'show']);
 Route::post('/login', [LoginController::class, 'login']); 
-Route::get('/home', [HomeController::class, 'index']); 
 Route::get('/logout', [LogoutController::class, 'logout']); 
+
+///HOME
+Route::get('/home', [HomeController::class, 'index']); 
+Route::post('/home', [HomeController::class, 'index']); 
+
+/*
+=============================
+PERFIL
+=============================
+*/
+Route::get('/perfil', [HomeController::class, 'perfil']); 
+Route::post('/perfil', [HomeController::class, 'perfil']); 
+
+///FOTOS
+Route::resource('/imgs', FileController::class)->names('files');
+

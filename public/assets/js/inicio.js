@@ -1,16 +1,10 @@
-let listaElements = document.querySelectorAll('.lista__button--click');
+var btnContainer = document.getElementById("navbar");
+var btns = btnContainer.getElementsByClassName("btn");
 
-listaElements.forEach(listaElements => {
-	listaElements.addEventListener('click', ()=>{
-		
-		listaElements.classList.toggle('arrow');
-
-		let height =0;
-		let menu = listaElements.nextElementSibling;
-		console.log()
-		if(menu.clientHeight == 0){
-			height=menu.scrollHeight;
-		}
-		menu.style.height = `${height}px`;
-	})
-});
+for (var i =0; i < btns.length; i++){
+    btns[i].addEventListener('click', function(){
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active");
+        this.className += " active";
+    })
+}

@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\File;
 
-class UserController extends Controller
+use Illuminate\Support\Facades\Storage;
+
+class FileController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -15,8 +16,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('users.index')->with('users', $users);
+        $files = File::where('user_id', auth()->user()->id);
+
+        return view('home.index', compact('files'));
     }
 
     /**
@@ -26,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('/register');
+        return view('files.create');
     }
 
     /**
@@ -37,59 +39,64 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->all();
-        User::create($input);
-        return redirect('/login')->with('flash_message', 'Usuario Añadido');
+        $request->validate([
+            'file' => 'required|image|max:2048'
+        ]);
+
+        $imagenes = $request->file('file')->store('public/ImagenesCargadas');
+
+        $url = Storage::url($imagenes);
+
+        File::create([
+            'user_id' => auth()->user()->id,
+            'url' => $url
+        ]);
+
+        return redirect('/home');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($file)
     {
-        $user = User::find($id);
-        return view('users.show')->with('users', $user);
+        return view('files.show');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($file)
     {
-        $user = User::find($id);
-        return view('users.edit')->with('users', $user);
+        return view('files.edit');
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $file)
     {
-        $user = User::find($id);
-        $input = $request->all();
-        $user->update($input);
-        return redirect('usuarios')->with('flash_message', 'Usuario Actualizado');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\User  $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($file)
     {
-        User::destroy($id);
-        return redirect('usuarios')->with('flash_message', 'Usuario Elminado');
+        //
     }
 }

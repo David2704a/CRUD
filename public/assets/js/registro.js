@@ -133,3 +133,222 @@ for (let i = 0; i < mostrarClave.length; i++) {
 
     });
 }
+
+
+/*========================================
+Validacion de registro
+==========================================*/
+
+// let names,email,password,apellidos,genero,telefono,fecha,confirmation_password,cbx_notificaciones,cbx_terminos;
+
+// if(document.getElementById('#btnRegistro')){
+
+//     const btnRegistro=document.getElementById('#btnRegistro');
+
+//     //evento click al boton registro
+//     btnRegistro.addEventListener('click',(e)=>{
+
+//         e.preventDefault();
+
+//         const msError=document.querySelector('#formRegistro .error-text');
+//         msError.innerHTML="";
+//         msError.classList.remove('active');
+
+//         names=formRegistro.names.value.trim();
+//         apellidos=formRegistro.apellidos.value.trim();
+//         email=formRegistro.email.value.trim();
+//         telefono=formRegistro.telefono.value.trim();
+//         genero=formRegistro.genero.value.trim();
+//         fecha=formRegistro.fecha.value.trim();
+//         password=formRegistro.password.value.trim();
+//         password_confirmation=formRegistro.password_confirmation.value.trim();
+
+//         cbx_notificaciones=formRegistro.cbx_notificaciones;
+//         cbx_terminos=formRegistro.cbx_terminos;
+
+//         //validacion para los campos cuando estan vacios
+//         if(names=="" && email=="" && password=="" && apellidos=="" && telefono=="" && genero=="" && fecha=="" && password_confirmation==""){
+            
+//             //se muestra error en pantalla
+//             mostrarError('Todos los campos son obligatorios',msError);
+            
+//             //se agrega la clase error a los input
+//             //se pasa los datos array
+//             inputError([formRegistro.names,formRegistro.email,formRegistro.password,formRegistro.confirmation_password, formRegistro.apellidos, formRegistro.genero, formRegistro.telefono, formRegistro.fecha]);
+//             return false;
+
+//         }else{
+//             //se remueve esa clase con la siguente funcion
+//             inputErrorRemove([formRegistro.names,formRegistro.email,formRegistro.password,formRegistro.confirmation_password, formRegistro.apellidos, formRegistro.genero, formRegistro.telefono, formRegistro.fecha]);
+//         }
+
+
+//         //validacion de cada input
+
+//         //Validacion del nombre
+//         if(names=="" || names==null){
+
+//             mostrarError('Por favor ingrese su nombre',msError);
+//             inputError([formRegistro.names]);
+//             formRegistro.names.focus(); // fija el foco del cursor en el elemento indicado,
+//             return false;
+//         }else{
+//             //se valida que ingrese un nombre y no numeros
+//             if(!validarSoloLetras(names)){
+//                 //si es diferente a true
+//                 mostrarError('Ingrese un nombre válido, no se permiten caracteres especiales',msError);
+//                 inputError([formRegistro.names]);
+//                 formRegistro.names.focus();
+//                 return false;
+//             }
+//         }
+
+
+//           //Validacion del apellido
+//           if(apellidos=="" || apellidos==null){
+
+//             mostrarError('Por favor ingrese su apellido',msError);
+//             inputError([formRegistro.apellidos]);
+//             formRegistro.apellidos.focus(); // fija el foco del cursor en el elemento indicado,
+//             return false;
+//         }else{
+//             //se valida que ingrese un nombre y no numeros
+//             if(!validarSoloLetras(apellidos)){
+//                 //si es diferente a true
+//                 mostrarError('Ingrese un apellido válido, no se permiten caracteres especiales',msError);
+//                 inputError([formRegistro.apellidos]);
+//                 formRegistro.apellidos.focus();
+//                 return false;
+//             }
+//         }
+//         //validacion de correo
+//         if(email==null || email==""){
+//             mostrarError('Por favor ingrese su correo',msError);
+//             inputError([formRegistro.email]);
+//             formRegistro.email.focus();
+
+//             return false;
+//         }else{
+
+//             if(!validarCorreo(email)){
+//                 mostrarError('Por favor ingrese un correo válido',msError);
+//                 inputError([formRegistro.email]);
+//                 formRegistro.email.focus();
+//                 return false;
+//             }
+//         }
+
+//         //validacion de password
+//         if(password=="" || password==null){
+//             mostrarError('Por favor ingrese una contraseña',msError);
+//             inputError([formRegistro.password]);
+//             formRegistro.password.focus();
+//             return false;
+//         }else{
+
+//             //validacion para que la contraseña tenga con minimos 5 cacteres
+//             if(password.length <=4){
+//                 mostrarError('Contraseña débil, min.5 carácteres',msError);
+//                 inputError([formRegistro.password]);
+//                 formRegistro.password.focus();
+//                 return false;
+//             }
+//         }
+
+
+//          //validacion de la confirmacion de contraseña
+//          if(password_confirmation=="" || password_confirmation==null){
+//             mostrarError('Por favor confime su contraseña',msError);
+//             inputError([formRegistro.password_confirmation]);
+//             formRegistro.password_confirmation.focus();
+//             return false;
+//         }else{
+
+//             //validacion que la contraseña tenga con minimos 5 cacteres
+//             if(password.length <=4){
+//                 mostrarError('Confirmación de contraseña es distinta a su contraseña',msError);
+//                 inputError([formRegistro.password_confirmation]);
+//                 formRegistro.password_confirmation.focus();
+//                 return false;
+//             }
+//         }
+
+
+//         //validacion del telefono
+//         if(telefono=="" || telefono==null){
+//             mostrarError('Por favor ingrese un número',msError);
+//             inputError([formRegistro.telefono]);
+//             formRegistro.telefono.focus();
+//             return false;
+//         }else{
+
+//             //se valida el número, falta lo de mandar mensaje
+//             if(telefono.length <=4){
+//                 mostrarError('Por favor ingrese un número válido',msError);
+//                 inputError([formRegistro.telefono]);
+//                 formRegistro.telefono.focus();
+//                 return false;
+//             }
+//         }
+
+//             ////Validacion del genero
+//         if(genero=="" || genero==null){
+//             mostrarError('Por favor ingrese un género',msError);
+//             inputError([formRegistro.genero]);
+//             formRegistro.genero.focus();
+//             return false;
+//         }else{
+
+//             //validamos que la contraseña tenga con minimos 5 cacteres
+//             if(genero.length <=4){
+//                 mostrarError('Por favor ingrese un género válido',msError);
+//                 inputError([formRegistro.genero]);
+//                 formRegistro.genero.focus();
+//                 return false;
+//             }
+//         }
+
+//            ////Validacion de la fecha
+//            if(fecha=="" || fecha==null){
+//             mostrarError('Por favor ingrese una fecha',msError);
+//             inputError([formRegistro.fecha]);
+//             formRegistro.fecha.focus();
+//             return false;
+//         }else{
+
+//             //validacion para que la fecha sea válida
+//             if(fecha.length <=4){
+//                 mostrarError('Por favor ingrese una fecha válida',msError);
+//                 inputError([formRegistro.fecha]);
+//                 formRegistro.fecha.focus();
+//                 return false;
+//             }
+//         }
+
+
+//         //validacion el cbx-terminos
+
+//         if(cbx_terminos.checked==false){
+//             mostrarError('Por favor aceptar Términos y condiciones',msError);
+            
+//             //se agrega un clase error a su elemento padre
+//             formRegistro.cbx_terminos.parentNode.classList.add('cbx-error');
+//             return false;
+//         }else{
+//             formRegistro.cbx_terminos.parentNode.classList.remove('cbx-error');
+//         }
+
+//         //despues de hacer las validaciones envio el formulario para luego recibirlos con php
+//         formRegistro.submit();
+//         return true;
+
+//     });
+
+//     formRegistro.cbx_terminos.addEventListener('change',(e)=>{
+//         if(e.target.checked){
+//             formRegistro.cbx_terminos.parentNode.classList.remove('cbx-error');
+//         }
+//     })
+
+
+// }

@@ -2,17 +2,19 @@
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
 
 
-body{
-    font-family: 'Montserrat Alternates', sans-serif;
+body {
+  font-family: 'Montserrat Alternates', sans-serif;
 
 }
-.login-diseño{
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    height: 100vh;
+
+.login-diseño {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  height: 100vh;
 
 }
-.inputs .icono{
+
+.inputs .icono {
   position: absolute;
   width: 60px;
   height: 100%;
@@ -24,292 +26,344 @@ body{
   right: 0;
   outline: 0;
 }
-.olas{
-    background-image: url(/imagenes/olas.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.olas {
+  background-image: url(/imagenes/olas.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 /*========================================
 Foto movible
 ==========================================*/
-.olas .img1{
-    top: 198px;
-    position: absolute;
-    animation: floating 1s infinite alternate ease;
-    }
-.olas .img1{
-    animation: floating 0.9s infinite alternate ease-in-out;
-  }
-  @keyframes floating {
-    from {
-      top: 165px;
-    }to{
-      top: 182px;
-    }
-  }
-  .olas .img{
-    position: fixed;
-    top: 690px;
-    left: 5px;
-  }
-  .eslogan{
-    position: relative;
-    top: -20px;
-    margin: 50px;
-    height: 25px;
-		font-size: 15px;
-		background-color: rgba(238, 176, 176, 0.379);
-		text-align: center;
-    border-radius: 20px;
-	  }
-	  .eslogan h3{
-		font-size: 18px;
-		font-family: 'Dancing Script', cursive;
-		color: brown;
-	  }
-.login{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.olas .img1 {
+  top: 198px;
+  position: absolute;
+  animation: floating 1s infinite alternate ease;
 }
-.login-data{
+
+.olas .img1 {
+  animation: floating 0.9s infinite alternate ease-in-out;
+}
+
+@keyframes floating {
+  from {
+    top: 165px;
+  }
+
+  to {
+    top: 182px;
+  }
+}
+
+.olas .img {
+  position: fixed;
+  top: 690px;
+  left: 5px;
+}
+
+.eslogan {
+  position: relative;
+  top: -20px;
+  margin: 50px;
+  height: 25px;
+  font-size: 15px;
+  background-color: rgba(238, 176, 176, 0.379);
+  text-align: center;
+  border-radius: 20px;
+}
+
+.eslogan h3 {
+  font-size: 18px;
+  font-family: 'Dancing Script', cursive;
+  color: brown;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-data {
   position: relative;
   top: -50px;
   text-align: center;
-  border: none; 
+  border: none;
   border-radius: 50px;
   width: 60%;
   height: 85%;
-    /* box-shadow: 0 0 10px #f5512c40, 0 0 40px #f5512c40, 0 0 80px#f5512c40; */
+  /* box-shadow: 0 0 10px #f5512c40, 0 0 40px #f5512c40, 0 0 80px#f5512c40; */
 }
-.login-data h1{
+
+.login-data h1 {
   position: relative;
   top: -40px;
 }
-.inputs{
-    position: relative;
-    top: -30px;
-    width: 60%;
-    margin: 0 auto;
-    margin-bottom: 1.5rem;
+
+.inputs {
+  position: relative;
+  top: -30px;
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
 }
-.labels input{
-    border: none;
-    border-bottom: 3px solid #848F9A;
-    width: 100%;
-    height: 2rem;
-    font-size: 1.0625rem;
-    padding: 2rem;
-    line-height: 147.6%;
-    padding-top: 2.5rem;
-    padding-bottom: 0.5rem;
+
+.labels input {
+  border: none;
+  border-bottom: 3px solid #848F9A;
+  width: 100%;
+  height: 2rem;
+  font-size: 1.0625rem;
+  padding: 2rem;
+  line-height: 147.6%;
+  padding-top: 2.5rem;
+  padding-bottom: 0.5rem;
 }
-.labels input:focus{
-    outline: none;
-    border-color: #B62602;
+
+.labels input:focus {
+  outline: none;
+  border-color: #B62602;
 }
-.labels input:hover{
-    background-color: #E9ECEF;
+
+.labels input:hover {
+  background-color: #E9ECEF;
 }
-.labels input:focus + .Inlb{
-    top: 0;
-    margin-bottom: 2rem;
-    color: #B62602;
+
+.labels input:focus+.Inlb {
+  top: 0;
+  margin-bottom: 2rem;
+  color: #B62602;
 }
-.labels input:focus ~ i{
-    color: #B62602;
+
+.labels input:focus~i {
+  color: #B62602;
 }
-.labels .Inlb{
-    position: absolute;
-    top: 10px;
-    left: 30px;
-    line-height: 147.6%;
-    color: #848F9A;
-    transition: top .2s;
-    font-weight: 600;
-    padding: 0.1rem;
-    
+
+.labels .Inlb {
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  line-height: 147.6%;
+  color: #848F9A;
+  transition: top .2s;
+  font-weight: 600;
+  padding: 0.1rem;
+
 }
-.labels i{
-    position: absolute;
-    top: 10px;
-    left: 0;
-    color: #848F9A;
-    font-size: 1.5rem;
+
+.labels i {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  color: #848F9A;
+  font-size: 1.5rem;
 }
+
 /*========================================
 Mensaje para ir a registrar
 ==========================================*/
-.welcome{
-    position: relative;
-    top: -305px;
-    left: 140px;
-    color: rgb(255, 255, 255);
-    display: flex;
-    text-align: center;
-  }
-  p{
-    color: #848F9A;
-    font-size: 20px;
-    font-weight: 600;
-  }
-  .mensaje h2{
-    color: #848F9A;
-    font-size: 1.6rem;
-    padding: 1rem 0;
-  }
- /*========================================
+.Bienve {
+  position: relative;
+  top: -285px;
+  left: 140px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  text-align: center;
+}
+
+.Bienve p {
+  color: #848F9A;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.mensaje h2 {
+  color: #848F9A;
+  font-size: 1.6rem;
+  padding: 1rem 0;
+}
+
+/*========================================
 Boton para pasar a registro
 ==========================================*/
-  .btnLogin{
-    position: relative;
-    top: 10px;
-    background-color: #222;
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    border: none;
-    letter-spacing: 4px;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    font-size: 18px;
-    overflow: hidden;
-    transition: 0.s;
-  
-  }
-  .btnLogin:hover{
-    background: #dc3f17;
-    box-shadow: 0 0 10px #f5502c, 0 0 40px #f5502c, 0 0 80px #f5502c;
-      transition-delay: 1s;
-  
-  }
-  .btnLogin span{
-    position: absolute;
-    display: block;
-  }
-  #span1{
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, transparent,#dc3f17);
-  }
-  .btnLogin:hover #span1{
-    left: 100%;
-    transition: 1s;
-  }
-  #span3{
-    bottom: 0;
-    right: -100%;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(270deg, transparent,#dc3f17);
-  }
-  .btnLogin:hover #span3{
-    right: 100%;
-    transition: 1s;
-    transition-delay: 0.5s;
-  }
-  #span2{
-    top: -100%;
-    right: 0;
-    width: 3px;
-    height: 100%;
-    background: linear-gradient(180deg,transparent,#dc3f17);
-  }
-  .btnLogin:hover #span2{
-    top: 100%;
-    transition: 1s;
-    transition-delay: 0.25s;
-  }
-  #span4{
-    bottom: -100%;
-    left: 0;
-    width: 3px;
-    height: 100%;
-    background: linear-gradient(360deg,transparent,#dc3f17);
-  }
-  .btnLogin:hover #span4{
-    bottom: 100%;
-    transition: 1s;
-    transition-delay: 0.75s;
-  }
+.boton a {
+  color: rgb(255, 255, 255);
+}
+
+.boton a:hover {
+  color: rgb(255, 255, 255);
+}
+
+.btnRegistro {
+  position: relative;
+  top: 10px;
+  background-color: #222;
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  letter-spacing: 4px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 18px;
+  overflow: hidden;
+  transition: 0.s;
+
+}
+
+.btnRegistro:hover {
+  background: #dc3f17;
+  box-shadow: 0 0 10px #f5502c, 0 0 40px #f5502c, 0 0 80px #f5502c;
+  transition-delay: 1s;
+
+}
+
+.btnRegistro span {
+  position: absolute;
+  display: block;
+}
+
+#span1 {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #dc3f17);
+}
+
+.btnRegistro:hover #span1 {
+  left: 100%;
+  transition: 1s;
+}
+
+#span3 {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(270deg, transparent, #dc3f17);
+}
+
+.btnRegistro:hover #span3 {
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+
+#span2 {
+  top: -100%;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #dc3f17);
+}
+
+.btnRegistro:hover #span2 {
+  top: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+
+#span4 {
+  bottom: -100%;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #dc3f17);
+}
+
+.btnRegistro:hover #span4 {
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0.75s;
+}
 
 /*========================================
 Boton para iniciar sesion
 ==========================================*/
-.btnInicio{
-    background-color: #222;
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    border: none;
-    letter-spacing: 4px;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    font-size: 18px;
-    overflow: hidden;
-    transition: 0.s;
-    margin-top: -15px;
-  }
-  .btnInicio:hover{
-    background: #dc3f17;
-      box-shadow: 0 0 10px #f5502c, 0 0 40px #f5502c, 0 0 80px #f5502c;
-      transition-delay: 1s;
-  
-  }
-  .btnInicio span{
-    position: absolute;
-    display: block;
-  }
-  #span1{
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, transparent,#dc3f17);
-  }
-  .btnInicio:hover #span1{
-    left: 100%;
-    transition: 1s;
-  }
-  #span3{
-    bottom: 0;
-    right: -100%;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(270deg, transparent,#dc3f17);
-  }
-  .btnInicio:hover #span3{
-    right: 100%;
-    transition: 1s;
-    transition-delay: 0.5s;
-  }
-  #span2{
-    top: -100%;
-    right: 0;
-    width: 3px;
-    height: 100%;
-    background: linear-gradient(180deg,transparent,#dc3f17);
-  }
-  .btnInicio:hover #span2{
-    top: 100%;
-    transition: 1s;
-    transition-delay: 0.25s;
-  }
-  #span4{
-    bottom: -100%;
-    left: 0;
-    width: 3px;
-    height: 100%;
-    background: linear-gradient(360deg,transparent,#dc3f17);
-  }
-  .btnInicio:hover #span4{
-    bottom: 100%;
-    transition: 1s;
-    transition-delay: 0.75s;
-  }
+.btnInicio {
+  background-color: #222;
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  letter-spacing: 4px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 18px;
+  overflow: hidden;
+  transition: 0.s;
+  margin-top: -15px;
+}
+
+.btnInicio:hover {
+  background: #dc3f17;
+  box-shadow: 0 0 10px #f5502c, 0 0 40px #f5502c, 0 0 80px #f5502c;
+  transition-delay: 1s;
+
+}
+
+.btnInicio span {
+  position: absolute;
+  display: block;
+}
+
+#span1 {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #dc3f17);
+}
+
+.btnInicio:hover #span1 {
+  left: 100%;
+  transition: 1s;
+}
+
+#span3 {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(270deg, transparent, #dc3f17);
+}
+
+.btnInicio:hover #span3 {
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+
+#span2 {
+  top: -100%;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #dc3f17);
+}
+
+.btnInicio:hover #span2 {
+  top: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+
+#span4 {
+  bottom: -100%;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #dc3f17);
+}
+
+.btnInicio:hover #span4 {
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0.75s;
+}

@@ -1,41 +1,44 @@
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
-:root{
-  --color-negro:#151718;
-  --color-texto:#727C77;
-  --color-rojo:#ED0722;
-  --color-rgba-rojo:rgba(237,7,34,.21);
-  --color-rgba-celeste:rgba(55,147,246,.27);
-  --color-rojo2:#B62602;
-  --color-input:#EEF5F9;
+
+:root {
+  --color-negro: #151718;
+  --color-texto: #727C77;
+  --color-rojo: #ED0722;
+  --color-rgba-rojo: rgba(237, 7, 34, .21);
+  --color-rgba-celeste: rgba(55, 147, 246, .27);
+  --color-rojo2: #B62602;
+  --color-input: #EEF5F9;
+  --color-fondo: #f7f9fd;
 }
 
-.input-error{
+.input-error {
   border: 1px solid var(--color-rojo) !important;
 }
+
 /*========================================
 Estilos generales
 ==========================================*/
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
-  background: #f7f9fd;
+body {
+  background: var(--color-fondo);
   font-family: 'Lato', sans-serif;
   font-size: 15px;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-ul{
+ul {
   list-style: none;
 }
 
-.contenedor-register{
+.contenedor-register {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -47,21 +50,21 @@ ul{
 /*========================================
 Estilos del contenedor slider
 ==========================================*/
-.contenedor-Slider{
+.contenedor-Slider {
   width: calc(100% - 520px);
   height: 100%;
   overflow: hidden;
   position: relative;
 }
 
-.Slider{
+.Slider {
   position: relative;
   display: flex;
   width: 100%;
   height: 100%;
 }
 
-.Slide{
+.Slide {
   min-width: 100%;
   min-height: 100%;
   height: auto;
@@ -70,19 +73,20 @@ Estilos del contenedor slider
   justify-content: center;
 }
 
-.Slide.Active{
+.Slide.Active {
   display: flex;
 }
 
-.Slide img{
+.Slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 /*========================================
 Estilos del eslogan
 ==========================================*/
-   h5{
+h5 {
   font-size: 18px;
   font-family: 'Dancing Script', cursive;
   position: relative;
@@ -93,28 +97,29 @@ Estilos del eslogan
   background-color: rgba(238, 176, 176, 0.379);
   text-align: center;
   border-radius: 20px;
-  }
+}
+
 /*========================================
 Estilos del contenido-slider
 ==========================================*/
-.contenido-Slider{
+.contenido-Slider {
   position: absolute;
   top: 60px;
   width: 600px;
   text-align: center;
 }
 
-.contenido-Slider .logo{
+.contenido-Slider .logo {
   position: relative;
   top: -60px;
   margin-bottom: 20px;
 }
 
-.contenido-Slider .logo img{
+.contenido-Slider .logo img {
   width: 200px;
 }
 
-.contenido-Slider .Slider-texto{
+.contenido-Slider .Slider-texto {
   color: #B62602;
   font-size: 16px;
 }
@@ -122,29 +127,28 @@ Estilos del contenido-slider
 /*========================================
 animacion de las fotos Slide
 ==========================================*/
-.fade{
-  animation: fade 1.5ms ease-in-out;
- 
+.fade {
+  animation: fade 1.5s ease-in-out;
   -webkit-animation: fade 1.5s ease-in-out;
 }
 
-@-webkit-keyframes fade{
-  from{
-      opacity: 0.4;
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
   }
 
-  to{
-      opacity: 1;
+  to {
+    opacity: 1;
   }
 }
 
-@keyframes fade{
-  from{
-      opacity: 0.4;
+@keyframes fade {
+  from {
+    opacity: 0.4;
   }
 
-  to{
-      opacity: 1;
+  to {
+    opacity: 1;
   }
 }
 
@@ -152,7 +156,7 @@ animacion de las fotos Slide
 Botones ante y siguiente
 ==========================================*/
 .ante,
-.siguiente{
+.siguiente {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -163,31 +167,31 @@ Botones ante y siguiente
   color: #fff;
   font-weight: bold;
   font-size: 28px;
-  transition:all .6s ease;
+  transition: all .6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
   outline: 0;
 }
 
-.siguiente{
+.siguiente {
   right: 0;
   border-radius: 3px 0px 0px 3px;
 }
 
 .ante:hover,
-.siguiente:hover{
+.siguiente:hover {
   background: var(--color-negro);
 }
 
 /* puntos */
-.Dots{
+.Dots {
   position: absolute;
   width: 100%;
   text-align: center;
   bottom: 10px;
 }
 
-.Dots .Dot{
+.Dots .Dot {
   outline: 0;
   cursor: pointer;
   height: 8px;
@@ -199,7 +203,7 @@ Botones ante y siguiente
   transition: all .6s ease-in-out;
 }
 
-.Dots .Dot.active{
+.Dots .Dot.active {
   background: var(--color-rojo2);
   width: 30px;
 }
@@ -207,7 +211,7 @@ Botones ante y siguiente
 /*========================================
 Estilos contenedor formularios
 ==========================================*/
-.contenedor-texto{
+.contenedor-texto {
   width: 520px;
   height: 100%;
   overflow: hidden;
@@ -215,14 +219,14 @@ Estilos contenedor formularios
   background: #fff;
 }
 
-.contenedor-form{
+.contenedor-form {
   position: relative;
   top: -50px;
   width: 100%;
   padding: 100px 50px 50px 50px;
 }
 
-.contenedor-form .titulo{
+.contenedor-form .titulo {
   position: relative;
   top: 32px;
   font-size: 24px;
@@ -231,7 +235,7 @@ Estilos contenedor formularios
   color: var(--color-negro);
 }
 
-.contenedor-form .descripcion{
+.contenedor-form .descripcion {
   position: relative;
   top: 24px;
   font-size: 15px;
@@ -241,7 +245,7 @@ Estilos contenedor formularios
 /*========================================
 Estilos Tabs
 ==========================================*/
-.tabs-links{
+.tabs-links {
   margin-top: 70px;
   display: flex;
   width: 100%;
@@ -249,7 +253,7 @@ Estilos Tabs
   padding-bottom: 10px;
 }
 
-.tabs-links .tab-link{
+.tabs-links .tab-link {
   font-size: 15px;
   margin-right: 30px;
   color: var(--color-texto);
@@ -257,12 +261,12 @@ Estilos Tabs
   position: relative;
 }
 
-.tabs-links .tab-link.active{
+.tabs-links .tab-link.active {
   color: var(--color-rojo2);
   font-weight: 700;
 }
 
-.tabs-links .tab-link.active::after{
+.tabs-links .tab-link.active::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -275,16 +279,16 @@ Estilos Tabs
 /*========================================
 Estilos Formularios
 ==========================================*/
-.formulario{
+.formulario {
   display: none;
   margin-top: 30px;
 }
 
-.formulario.active{
+.formulario.active {
   display: block;
 }
 
-.formulario .input-text{
+.formulario .input-text {
   padding: 14px 20px;
   border: 1px solid transparent;
   background: var(--color-input);
@@ -296,19 +300,19 @@ Estilos Formularios
   color: var(--color-texto);
 }
 
-.formulario .grupo-input{
+.formulario .grupo-input {
   display: flex;
   width: 100%;
   position: relative;
   margin-bottom: 20px;
 }
 
-.formulario .grupo-input .input-text{
+.formulario .grupo-input .input-text {
   padding-right: 60px;
   margin-bottom: 0px;
 }
 
-.formulario .grupo-input .icono{
+.formulario .grupo-input .icono {
   position: absolute;
   width: 60px;
   height: 100%;
@@ -321,24 +325,24 @@ Estilos Formularios
   outline: 0;
 }
 
-.formulario .grupo-input .icono.active{
+.formulario .grupo-input .icono.active {
   color: var(--color-rojo2);
 }
 
-.formulario .input-text:focus{
+.formulario .input-text:focus {
   border: 1px solid #B62602;
 }
 
-.link{
+.link {
   font-size: 14px;
   color: var(--color-rojo2);
 }
 
-.link:hover{
+.link:hover {
   text-decoration: underline;
 }
 
-.formulario .btn{
+.formulario .btn {
   width: 100%;
   padding: 14px;
   border: none;
@@ -352,14 +356,62 @@ Estilos Formularios
   cursor: pointer;
   display: block;
 }
-.formulario .btn:hover{
+
+.formulario .btn:hover {
   background: #cd540e;
 }
+
+
+/*========================================
+Estilos mesajes de error
+==========================================*/
+.error-text{
+  background: var(--color-rgba-rojo);
+  border-radius: 4px;
+  padding: 8px 20px;
+  margin-bottom: 10px;
+  display: none;
+}
+
+.error-text p{
+  font-size: 13px;
+  color: var(--color-rojo);
+}
+
+
+.error-text.active{
+  display: block;
+}
+
+.cbx-error .cbx-marca{
+  -webkit-animation: cbx_error .2s ease-in-out infinite;
+  animation: cbx_error .2s ease-in-out infinite;
+  border: 1px solid var(--color-rojo);
+  
+}
+
+@keyframes cbx_error {
+ 
+  0%  { 
+      -webkit-transform:rotateX(-5deg);
+      transform: rotateX(-5deg);
+  
+  }
+  50% {
+      -webkit-transform:rotateX( 0deg) scale(.8); 
+      transform: rotateX(0deg) scale(.8);
+  }
+  100%{
+      -webkit-transform:rotateX( 5deg);
+      transform: rotateX(5deg);
+  }
+}
+
 
 /*========================================
 Estilos de los checkbox
 ==========================================*/
-.contenedor-cbx{
+.contenedor-cbx {
   display: inline-block;
   position: relative;
   padding-left: 28px;
@@ -372,7 +424,7 @@ Estilos de los checkbox
 
 
 
-.contenedor-cbx input{
+.contenedor-cbx input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -380,23 +432,23 @@ Estilos de los checkbox
   width: 0;
 }
 
-.contenedor-cbx .cbx-marca{
+.contenedor-cbx .cbx-marca {
   position: absolute;
   top: 0;
   left: 0;
   height: 20px;
   width: 20px;
   background: transparent;
-  border:1px solid var(--color-texto);
+  border: 1px solid var(--color-texto);
   border-radius: 2px;
   transition: all .8s ease;
 }
 
-.contenedor-cbx:hover input ~ .cbx-marca{
+.contenedor-cbx:hover input~.cbx-marca {
   border: 1px solid var(--color-rojo2);
 }
 
-.contenedor-cbx .cbx-marca::after{
+.contenedor-cbx .cbx-marca::after {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   content: '\f00c';
@@ -408,12 +460,12 @@ Estilos de los checkbox
   color: #fff;
 }
 
-.contenedor-cbx input:checked ~ .cbx-marca::after{
+.contenedor-cbx input:checked~.cbx-marca::after {
   display: block;
 }
 
 
-.contenedor-cbx input:checked ~ .cbx-marca{
+.contenedor-cbx input:checked~.cbx-marca {
   background: var(--color-rojo2) !important;
   border: 1px solid var(--color-rojo2) !important;
 }
@@ -422,7 +474,7 @@ Estilos de los checkbox
 Animación a los checkbox
 ==========================================*/
 
-.contenedor-cbx.animate input:checked ~ .cbx-marca{
+.contenedor-cbx.animate input:checked~.cbx-marca {
   -webkit-transform: rotate(360deg);
   transform: rotate(360deg);
 }
@@ -435,83 +487,82 @@ Animación a los checkbox
 @media screen and (max-width: 768px) {
 
   .contenedor-register {
-      flex-direction: column;
-      height: 100%;
+    flex-direction: column;
+    height: 100%;
   }
 
   .contenedor-Slider {
-      width: 100%;
-      height: 400px;
-      position: relative;
+    width: 100%;
+    height: 400px;
+    position: relative;
   }
 
   .contenido-Slider {
-      top: 30px;
-      width: 100%;
+    top: 30px;
+    width: 100%;
   }
 
-  
+
 
   .dots {
-      display: none;
+    display: none;
   }
 
-  
 
-  .contenedor-texto{
-      width:calc(100% - 30px);
-      position: relative;
-      background: #fff;
-      box-shadow: 0px 3px 6px rgba(0,0,0,.08);
-      margin: auto;
-      margin-top: -50px;
-      border-radius: 7px;
-      margin-bottom: 40px;
+
+  .contenedor-texto {
+    width: calc(100% - 30px);
+    position: relative;
+    background: #fff;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .08);
+    margin: auto;
+    margin-top: -50px;
+    border-radius: 7px;
+    margin-bottom: 40px;
   }
 
   .contenedor-form {
-      padding: 20px !important;
+    padding: 20px !important;
   }
 
   .contenedor-form .titulo {
-      font-size: 20px;
+    font-size: 20px;
   }
 
   .contenedor-form .tabs-links {
-      margin-top: 40px;
+    margin-top: 40px;
   }
 
-  
+
 }
-
-
 
 /*========================================
   @media query - Tableta horizontal
 ==========================================*/
 @media screen and (max-width: 812px) {
   .contenido-slider .slider-texto {
-      display: none;
+    display: none;
   }
 }
 
 @media screen and (max-width: 1024px) {
-  
+
 
   .contenedor-form {
-      padding: 50px;
+    padding: 50px;
   }
 
-  .prev,.next{
-      display: none;
+  .prev,
+  .next {
+    display: none;
   }
 
   .contenido-Slider {
-      width: 100%;
-      top: 30px;
+    width: 100%;
+    top: 30px;
   }
 
   .contenido-Slider .Slider-texto {
-     padding: 0px 30px;
+    padding: 0px 30px;
   }
 }
